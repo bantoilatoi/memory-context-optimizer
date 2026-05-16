@@ -1,0 +1,39 @@
+{
+  "name": "memory-context-optimizer",
+  "version": "0.1.0",
+  "description": "Universal memory and context optimizer for AI coding agents.",
+  "type": "module",
+  "bin": {
+    "memory-context-optimizer": "./bin/install.js",
+    "mco": "./bin/memory-context.js"
+  },
+  "scripts": {
+    "install:local": "node bin/install.js --all",
+    "install:dry-run": "node bin/install.js --dry-run --all",
+    "validate": "node src/tools/validate-repository.js --strict",
+    "test": "node --test tests/*.test.js",
+    "sync:plugin": "node src/tools/sync-plugin.js",
+    "lint": "node --check bin/*.js src/**/*.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bantoilatoi/memory-context-optimizer.git"
+  },
+  "keywords": [
+    "memory",
+    "context",
+    "optimization",
+    "ai",
+    "coding",
+    "agent",
+    "claude",
+    "gemini",
+    "qwen"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}

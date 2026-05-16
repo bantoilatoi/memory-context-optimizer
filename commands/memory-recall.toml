@@ -1,0 +1,30 @@
+description = "Compact context when usage reaches 60%"
+prompt = """
+Compact context when active usage reaches 60%.
+
+Build a recall summary with:
+- Current task description
+- Success criteria (3 max)
+- Active files (top 10 by relevance)
+- Critical facts (exact paths, function names, config keys)
+- Current errors (exact messages, first stack frames)
+- Relevant memory entries (summaries only)
+- Stale/conflicting entries (flagged)
+- Discarded categories (why skipped)
+- Next action
+
+Preserve:
+- Exact file paths
+- Exact function/class names
+- Exact error messages
+- Exact line numbers
+- Config keys
+
+Discard:
+- Duplicates
+- Verbose logs (first + count)
+- Low-relevance files
+- Full stack traces (first 5 frames)
+
+Threshold: 60% context usage
+"""

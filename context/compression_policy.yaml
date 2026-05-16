@@ -1,0 +1,78 @@
+# Compression Policy
+
+Log and output compression rules.
+
+## Preservation Rules
+
+### Always Preserve
+- Exact error messages
+- File paths
+- Line numbers
+- Function/class names
+- Exception types
+- Config structure
+
+### Always Remove
+- Duplicate stack traces
+- Verbose timestamps (keep if order-critical)
+- Excess whitespace
+- Redundant headers
+
+## Stack Trace Compression
+
+```yaml
+stack_trace:
+  max_frames: 5
+  show_remaining: true
+  format: "at {function} ({file}:{line})"
+```
+
+## Repeated Lines
+
+```yaml
+repeated_lines:
+  collapse: true
+  show_first: true
+  show_count: true
+  format: "[{line} repeated {count}x]"
+```
+
+## Compression Examples
+
+### Before
+```
+Error: Cannot read property 'foo' of undefined
+    at Bar.baz (src/utils.js:42:15)
+    at Bar.qux (src/utils.js:101:7)
+    at Qux.handle (src/handlers.js:55:10)
+    at Layer.handle (node_modules/express/lib/router/index.js:305:5)
+    at processTicksAndRejections (node:internal/process/task_queues.js:95:5)
+```
+
+### After
+```
+Error: Cannot read property 'foo' of undefined
+  at Bar.baz (src/utils.js:42)
+  at Bar.qux (src/utils.js:101)
+  at Qux.handle (src/handlers.js:55)
+[2 more frames]
+```
+
+## Output Format
+
+```markdown
+## Errors
+```
+[Error with compressed stack]
+```
+
+## Warnings
+```
+[Warning 1]
+[Warning 2]
+```
+
+## Summary
+- Total lines: {original} → {compressed}
+- Reduction: {percentage}%
+```

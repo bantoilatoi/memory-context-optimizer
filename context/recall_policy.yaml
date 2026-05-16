@@ -1,0 +1,76 @@
+# Recall Policy
+
+Auto-recall at context threshold.
+
+## Trigger
+
+```yaml
+auto_recall_threshold: 0.60
+```
+
+Trigger when: `active_tokens / max_tokens >= 0.60`
+
+## Recall Summary Format
+
+```markdown
+# Recall Summary
+
+## Current Task
+[One sentence task description]
+
+## Success Criteria
+1. [Criterion 1]
+2. [Criterion 2]
+3. [Criterion 3]
+
+## Active Files (Top 10)
+1. [path] - [relevance]
+2. ...
+
+## Critical Facts
+- `file.js`:`function()` - [what]
+- Config: [key] = [structure]
+
+## Current Errors
+```
+[Exact error]
+[First frames]
+```
+
+## Relevant Memory
+- [file.md]: [summary]
+
+## Stale/Conflicting
+- [entry]: [issue]
+
+## Discarded
+- [category]: [why]
+
+## Next Action
+[Immediate step]
+```
+
+## Preservation Rules
+
+### Keep
+- Exact file paths
+- Exact function/class names
+- Exact error messages
+- Exact line numbers
+- Recent decisions with rationale
+- Stale/conflicting flags
+
+### Discard
+- Duplicates
+- Full stack traces (first 5 frames)
+- Verbose logs (first + count)
+- Unrelated files
+- Low-relevance docs
+
+## Anti-Patterns
+
+- Do NOT dump all memory
+- Do NOT include full file contents
+- Do NOT repeat verbose traces
+- Do NOT load unrelated files
+- Do NOT create new entries during recall

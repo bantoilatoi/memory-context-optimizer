@@ -1,0 +1,43 @@
+# Safety Policy
+
+Security and safety rules.
+
+## Secret Redaction
+
+### Patterns to Redact
+
+| Type | Pattern | Replace |
+|------|---------|---------|
+| API Key | `sk-[a-zA-Z0-9]{20,}` | `***REDACTED***` |
+| Token | `Bearer .+` | `***REDACTED***` |
+| Password | `password\s*=\s*["'][^"']+["']` | `***REDACTED***` |
+| Private Key | `-----BEGIN .+-----` | `***REDACTED***` |
+| Secret | `secret\s*=\s*["'][^"']+["']` | `***REDACTED***` |
+
+### What to Keep
+- Variable names
+- File paths
+- Function names
+- Config keys
+- Error structure
+
+## Memory Safety
+
+### Never Store
+- Real API keys
+- Real tokens
+- Real passwords
+- Private keys
+- User PII
+
+### Always Redact
+- Secrets in code
+- Secrets in memory
+- Secrets in logs
+
+## Anti-Patterns
+
+- Do NOT log secrets
+- Do NOT include secrets in context
+- Do NOT store secrets in memory files
+- Do NOT share context containing secrets

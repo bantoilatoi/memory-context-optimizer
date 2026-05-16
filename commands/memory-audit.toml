@@ -1,0 +1,26 @@
+description = "Check memory for stale, conflicting, or sensitive content"
+prompt = """
+Audit memory files for problems.
+
+Detect:
+- STALE: references deleted files, outdated versions
+- CONFLICTING: multiple entries differ, code contradicts memory
+- SENSITIVE: contains secrets or PII
+- ORPHAN: no references from code
+
+Flag format:
+  <!-- STALE: reason -->
+  <!-- CONFLICTING: contradicts X -->
+
+Check:
+- File structure intact
+- Entries have timestamps
+- Recent decisions captured
+- No contradictions
+- No secrets stored
+
+Output:
+- Summary table (stale, conflicting, healthy)
+- Flagged entries with reasons
+- Recommendations for fix/removal
+"""

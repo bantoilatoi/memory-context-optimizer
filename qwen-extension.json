@@ -1,0 +1,17 @@
+{
+  "name": "memory-context-optimizer",
+  "version": "0.1.0",
+  "description": "Universal memory and context optimizer for Qwen-compatible coding agents.",
+  "entry": "skills/memory-context-optimizer/SKILL.md",
+  "defaultMemoryPath": ".memory-context",
+  "compatibleMemoryPaths": [
+    ".qwen/memory",
+    ".claude/memory",
+    ".gemini/memory",
+    ".opencode/memory",
+    ".codex/memory"
+  ],
+  "autoRecallThreshold": 0.6,
+  "node": ">=20",
+  "branch": "master"
+}

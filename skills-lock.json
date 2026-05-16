@@ -1,0 +1,37 @@
+{
+  "version": "0.1.0",
+  "skills": [
+    {
+      "name": "memory-context-optimizer",
+      "path": "skills/memory-context-optimizer/",
+      "description": "Main skill for context optimization workflow"
+    },
+    {
+      "name": "memory-recall",
+      "path": "skills/memory-recall/",
+      "description": "Auto recall at 60% context threshold"
+    },
+    {
+      "name": "memory-compress",
+      "path": "skills/memory-compress/",
+      "description": "Log and output compression"
+    },
+    {
+      "name": "memory-rank",
+      "path": "skills/memory-rank/",
+      "description": "Context ranking by relevance"
+    },
+    {
+      "name": "memory-audit",
+      "path": "skills/memory-audit/",
+      "description": "Stale and conflicting memory detection"
+    },
+    {
+      "name": "memory-init",
+      "path": "skills/memory-init/",
+      "description": "Memory initialization from templates"
+    }
+  ],
+  "lastSynced": null,
+  "branch": "master"
+}

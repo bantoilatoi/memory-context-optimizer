@@ -1,0 +1,54 @@
+# Ranking Policy
+
+Context ranking rules.
+
+## Scoring Factors
+
+```yaml
+relevance_score:
+  direct_importance: 0.4   # Current file focus
+  task_mention: 0.3        # Task keyword match
+  recency: 0.2            # Recent modification
+  dependency: 0.1         # Import distance
+```
+
+## Recency Scoring
+
+| Days Since Modified | Score |
+|---------------------|-------|
+| < 7 days | 1.0 |
+| < 30 days | 0.5 |
+| < 90 days | 0.2 |
+| > 90 days | 0.1 |
+
+## Tier Definitions
+
+### Tier 1: Critical
+- Current file being edited
+- Directly imported files
+- Test files for current file
+- Configuration explicitly mentioned
+- Files with active errors
+
+### Tier 2: Useful
+- Files in same directory
+- Related test files
+- Type definitions
+- Utilities used by current file
+
+### Tier 3: Reference
+- Documentation files
+- README files
+- Architecture docs
+
+### Tier 4: Archive
+- Unrelated source files
+- Old test files
+- Generated files
+
+## Priority Rules
+
+1. Failing tests rank above passing tests
+2. Recently modified files rank higher
+3. Direct imports rank higher than indirect
+4. Files mentioned in task rank higher

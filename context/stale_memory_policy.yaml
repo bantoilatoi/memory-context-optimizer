@@ -1,0 +1,52 @@
+# Stale Memory Policy
+
+Detection and handling of stale memory entries.
+
+## Stale Detection
+
+Mark as stale when:
+
+```yaml
+stale_conditions:
+  - references_deleted_files: true
+  - mentions_deleted_functions: true
+  - contains_outdated_versions: true
+  - contradicts_current_code: true
+  - older_than_days: 90
+  - mentions_non_existent_commands: true
+```
+
+## Conflict Detection
+
+Mark as conflicting when:
+
+```yaml
+conflict_conditions:
+  - multiple_entries_describe_same: true
+  - new_code_contradicts_memory: true
+  - recent_decision_overrides: true
+  - team_member_feedback_differs: true
+```
+
+## Flag Format
+
+```yaml
+stale_flag: "<!-- STALE: {reason} -->"
+conflict_flag: "<!-- CONFLICTING: {reference} -->"
+```
+
+## Cleanup Actions
+
+| Type | Action |
+|------|--------|
+| Stale | Update or remove |
+| Conflicting | Consolidate or choose recent |
+| Orphan | Review and either delete or link |
+| Sensitive | Redact or remove |
+
+## Review Frequency
+
+- Every 90 days minimum
+- On code refactoring
+- On dependency updates
+- On architecture changes

@@ -1,0 +1,57 @@
+# Memory Schema
+
+Structure for `.memory-context/` files.
+
+## Frontmatter
+
+```yaml
+---
+name: file-name
+description: One-line description
+type: architecture|conventions|work|errors|testing|deployment|decisions|observability|api|data|ci-cd|security|stale|recall
+updated: YYYY-MM-DD
+---
+```
+
+## File Types
+
+| Type | Purpose |
+|------|---------|
+| architecture | System design and components |
+| conventions | Style and patterns |
+| work | Active tasks |
+| errors | Known bugs |
+| testing | Test patterns |
+| deployment | Deploy process |
+| decisions | Decision log |
+| observability | Logging/metrics |
+| api | API schemas |
+| data | Data models |
+| ci-cd | Pipeline |
+| security | Security notes |
+| stale | Review queue |
+| recall | Recall summaries |
+
+## Entry Format
+
+```markdown
+## Entry Title
+
+Description of the entry.
+
+**Why:** Reason for this entry.
+**When:** Date added or last updated.
+**Source:** Where this information came from.
+```
+
+## Stale Flag
+
+```markdown
+<!-- STALE: reason -->
+```
+
+## Conflict Flag
+
+```markdown
+<!-- CONFLICTING: contradicts X -->
+```

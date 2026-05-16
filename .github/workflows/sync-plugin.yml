@@ -1,0 +1,45 @@
+name: Sync Plugin Mirror
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'skills/**'
+      - 'agents/**'
+      - 'commands/**'
+      - 'context/**'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Sync Plugin Mirror
+        run: node src/tools/sync-plugin.js
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: sync plugin mirror'
+          title: 'Sync Plugin Mirror'
+          body: |
+            Automatic sync of skills, agents, and commands to plugin mirror.
+
+            Triggered by changes to:
+            - skills/**
+            - agents/**
+            - commands/**
+            - context/**
+
+            Please review and merge.
+          branch: sync-plugin-mirror
+          delete-branch: true

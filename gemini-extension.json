@@ -1,0 +1,6 @@
+{
+  "name": "memory-context-optimizer",
+  "description": "Universal memory and context optimizer for AI coding agents. Loads minimal context, ranks relevance, compacts at 60%, and redacts secrets.",
+  "version": "0.1.0",
+  "contextFileName": "GEMINI.md"
+}

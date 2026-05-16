@@ -1,0 +1,26 @@
+description = "Initialize .memory-context/ directory with template files"
+prompt = """
+Initialize the .memory-context/ directory with standard template files.
+
+Create the following files if missing:
+- architecture.md - Project architecture overview
+- coding-conventions.md - Style and patterns
+- current-work.md - Active tasks
+- known-errors.md - Bug workarounds
+- testing-patterns.md - Test conventions
+- deployment.md - Deploy process
+- decisions.md - Decision log
+- observability.md - Logging/metrics
+- api-contracts.md - API schemas
+- data-models.md - Data structures
+- ci-cd.md - Pipeline config
+- security-notes.md - Security notes
+- stale-candidates.md - Review queue
+- recall-index.md - Recall summaries
+
+Use templates from templates/project-memory/ as content.
+
+Do NOT overwrite existing files. Preserve existing entries.
+
+Default memory path: .memory-context/
+"""

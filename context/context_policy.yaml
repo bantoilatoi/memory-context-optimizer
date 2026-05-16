@@ -1,0 +1,35 @@
+# Context Policy
+
+Context loading and prioritization rules.
+
+## Memory Path
+
+- Default: `.memory-context/`
+- Compatible: `.qwen/memory/`, `.claude/memory/`, `.gemini/memory/`, `.opencode/memory/`, `.codex/memory/`
+- **Never use**: `.ai/memory` (deprecated)
+
+## Classification
+
+| Class | Description | Action |
+|-------|-------------|--------|
+| critical | Task-essential | Load immediately |
+| useful | Related but not essential | Load if critical insufficient |
+| reference | May be needed | Load on request |
+| archive | Unlikely needed | Skip |
+| sensitive | Secrets | Redact value |
+| stale | Outdated | Flag, skip |
+| conflicting | Contradicts code | Flag, prefer recent |
+
+## Load Limits
+
+| Class | Max Items |
+|-------|-----------|
+| critical | unlimited |
+| useful | 20 |
+| reference | 10 |
+| archive | 0 |
+
+## Threshold
+
+- Recall triggers at: 60%
+- Formula: `active_tokens / max_tokens >= 0.60`

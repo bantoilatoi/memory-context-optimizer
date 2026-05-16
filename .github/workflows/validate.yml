@@ -1,0 +1,66 @@
+name: Validate
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate Repository
+        run: node src/tools/validate-repository.js --strict
+
+      - name: Syntax Check
+        run: |
+          node --check bin/install.js
+          node --check bin/memory-context.js
+          node --check src/installers/providers.js
+          node --check src/installers/install.js
+          node --check src/tools/memory-init.js
+          node --check src/tools/memory-recall.js
+          node --check src/tools/memory-rank.js
+          node --check src/tools/memory-compress.js
+          node --check src/tools/memory-audit.js
+          node --check src/tools/validate-repository.js
+          node --check src/tools/sync-plugin.js
+
+      - name: Run Tests
+        run: node --test tests/*.test.js
+
+      - name: Install Test - Generic
+        run: node bin/install.js --test-install --only generic
+
+      - name: Install Test - Gemini
+        run: node bin/install.js --test-install --only gemini
+
+      - name: Install Test - Qwen
+        run: node bin/install.js --test-install --only qwen
+
+      - name: Install Test - Claude
+        run: node bin/install.js --test-install --only claude
+
+      - name: Check for Python References
+        run: |
+          if grep -r "python\|python3" --include="*.js" . 2>/dev/null; then
+            echo "Error: Python references found in JavaScript files"
+            exit 1
+          fi
+
+      - name: Check for .ai/memory
+        run: |
+          if grep -r "\.ai/memory" --include="*.md" . 2>/dev/null; then
+            echo "Error: .ai/memory references found"
+            exit 1
+          fi
