@@ -83,6 +83,14 @@ describe('Repository Validation', () => {
         });
     });
 
+    test('sync plugin workflow should allow creating pull request branches', () => {
+        const workflowPath = join(REPO_ROOT, '.github', 'workflows', 'sync-plugin.yml');
+        const content = readFileSync(workflowPath, 'utf-8');
+
+        assert.match(content, /^permissions:\n(?:  .+\n)*  contents: write$/m);
+        assert.match(content, /^  pull-requests: write$/m);
+    });
+
     test('should not have deprecated memory path references except in migration notes', () => {
         const forbidden = '.ai' + '/memory';
         const violations = [];

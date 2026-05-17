@@ -9,6 +9,10 @@ on:
       - 'commands/**'
       - 'context/**'
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
