@@ -83,8 +83,8 @@ describe('Repository Validation', () => {
         });
     });
 
-    test('should not have .ai/memory references except in migration notes', () => {
-        const forbidden = '.ai/memory';
+    test('should not have deprecated memory path references except in migration notes', () => {
+        const forbidden = '.ai' + '/memory';
         const violations = [];
 
         function scanDir(dir, depth = 0) {
@@ -129,7 +129,7 @@ describe('Repository Validation', () => {
 
         scanDir(REPO_ROOT);
 
-        assert.strictEqual(violations.length, 0, `Found .ai/memory in (not in migration notes): ${violations.join(', ')}`);
+        assert.strictEqual(violations.length, 0, `Found deprecated memory path in (not in migration notes): ${violations.join(', ')}`);
     });
 
     test('should not have Python in JavaScript files', () => {

@@ -11,9 +11,9 @@
     "install:local": "node bin/install.js --all",
     "install:dry-run": "node bin/install.js --dry-run --all",
     "validate": "node src/tools/validate-repository.js --strict",
-    "test": "node --test tests/*.test.js",
+    "test": "node --test tests",
     "sync:plugin": "node src/tools/sync-plugin.js",
-    "lint": "node --check bin/*.js src/**/*.js"
+    "lint": "node --check bin/install.js && node --check bin/memory-context.js && node --check src/installers/install.js && node --check src/installers/providers.js && node --check src/tools/memory-audit.js && node --check src/tools/memory-compress.js && node --check src/tools/memory-init.js && node --check src/tools/memory-rank.js && node --check src/tools/memory-recall.js && node --check src/tools/sync-plugin.js && node --check src/tools/validate-repository.js"
   },
   "engines": {
     "node": ">=20"

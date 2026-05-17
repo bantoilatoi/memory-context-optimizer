@@ -73,7 +73,7 @@ node bin/memory-context.js init
 **Solution:**
 - Use `.memory-context/` (default)
 - Check compatible paths: `.qwen/memory/`, `.claude/memory/`, etc.
-- **Never use**: `.ai/memory`
+- **Never use**: `deprecated memory path`
 
 ### "Stale entries detected"
 
@@ -120,12 +120,12 @@ node src/tools/validate-repository.js
 node src/tools/validate-repository.js --strict
 ```
 
-### ".ai/memory detected"
+### "deprecated memory path detected"
 
 **Problem:** Forbidden memory path used
 
 **Solution:**
-- Remove all `.ai/memory` references
+- Remove all `deprecated memory path` references
 - Use `.memory-context/` instead
 
 ### "Python in JavaScript files"

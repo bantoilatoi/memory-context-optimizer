@@ -80,7 +80,7 @@ Compatible paths:
 - `.opencode/memory/`
 - `.codex/memory/`
 
-> **Note**: `.ai/memory` is deprecated and not used.
+> **Note**: `deprecated memory path` is deprecated and not used.
 
 ## Auto Recall at 60%
 

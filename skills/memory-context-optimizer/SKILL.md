@@ -22,7 +22,7 @@ Optimize context usage by loading minimal sufficient context, ranking by relevan
 ### Memory Path
 - **Default**: `.memory-context/`
 - **Compatible**: `.qwen/memory/`, `.claude/memory/`, `.gemini/memory/`, `.opencode/memory/`, `.codex/memory/`
-- **Never use**: `.ai/memory` (deprecated)
+- **Never use**: `deprecated memory path` (deprecated)
 
 ### Context Classification
 

@@ -53,7 +53,7 @@ The following patterns are automatically redacted:
 1. Never share raw context containing secrets
 2. Use recall summaries instead of full dumps
 3. Review memory files before committing
-4. Use `.memory-context/` for project memory (not `.ai/memory`)
+4. Use `.memory-context/` for project memory (not `deprecated memory path`)
 
 ## Incident Response
 

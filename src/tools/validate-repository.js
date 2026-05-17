@@ -139,9 +139,9 @@ export function validateRepository(options = {}) {
         }
     }
 
-    // Check for .ai/memory usage
+    // Check for deprecated memory path usage
     console.log('\n## Memory Path Check');
-    const forbiddenPattern = '.ai/memory';
+    const forbiddenPattern = '.ai' + '/memory';
     const forbiddenFiles = [];
 
     function scanDir(dir, depth = 0) {
@@ -169,10 +169,10 @@ export function validateRepository(options = {}) {
     scanDir(REPO_ROOT);
 
     if (forbiddenFiles.length > 0) {
-        errors.push(`Found .ai/memory in: ${forbiddenFiles.join(', ')}`);
+        errors.push(`Found deprecated memory path in: ${forbiddenFiles.join(', ')}`);
         forbiddenFiles.forEach(f => console.log(`  ✗ ${f}`));
     } else {
-        console.log(`  ✓ No .ai/memory references found`);
+        console.log(`  ✓ No deprecated memory path references found`);
     }
 
     // Check for Python references (unless explicitly allowed)

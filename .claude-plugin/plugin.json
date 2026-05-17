@@ -1,0 +1,8 @@
+{
+  "name": "memory-context-optimizer",
+  "version": "0.1.0",
+  "description": "Claude Code plugin for memory and context optimization.",
+  "entry": "skills/memory-context-optimizer/SKILL.md",
+  "defaultMemoryPath": ".memory-context",
+  "autoRecallThreshold": 0.6
+}

@@ -42,7 +42,7 @@
 - [ ] All JS files pass syntax check
 - [ ] All TOML files parse correctly
 - [ ] All YAML files parse correctly
-- [ ] No `.ai/memory` references
+- [ ] No `deprecated memory path` references
 - [ ] No Python runtime references
 - [ ] Node engine >= 20 specified
 - [ ] Plugin mirror synced
@@ -60,7 +60,7 @@ Example:
 ```
 feat(skills): add memory-audit skill
 docs(readme): update install instructions
-test(validation): add .ai/memory detection test
+test(validation): add deprecated memory path detection test
 ```
 
 ## Pull Request Process

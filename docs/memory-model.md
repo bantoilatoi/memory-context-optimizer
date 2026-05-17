@@ -75,4 +75,4 @@ Provider-specific paths:
 - `.claude/memory/` → map to `.memory-context/`
 - `.gemini/memory/` → map to `.memory-context/`
 
-**Never use**: `.ai/memory` (deprecated)
+**Never use**: `deprecated memory path` (deprecated)

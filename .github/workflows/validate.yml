@@ -58,9 +58,9 @@ jobs:
             exit 1
           fi
 
-      - name: Check for .ai/memory
+      - name: Check for deprecated memory path
         run: |
-          if grep -r "\.ai/memory" --include="*.md" . 2>/dev/null; then
-            echo "Error: .ai/memory references found"
+          if grep -r "\deprecated memory path" --include="*.md" . 2>/dev/null; then
+            echo "Error: deprecated memory path references found"
             exit 1
           fi

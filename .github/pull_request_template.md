@@ -31,7 +31,7 @@ node bin/install.js --test-install --only claude
 - [ ] Validation passes
 - [ ] Tests pass
 - [ ] No Python in JavaScript files
-- [ ] No `.ai/memory` references
+- [ ] No `deprecated memory path` references
 - [ ] Branch is `master`
 - [ ] Documentation updated (if needed)
 
