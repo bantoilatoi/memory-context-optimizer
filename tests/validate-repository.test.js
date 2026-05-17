@@ -91,6 +91,14 @@ describe('Repository Validation', () => {
         assert.match(content, /^  pull-requests: write$/m);
     });
 
+    test('validate workflow should not duplicate repository scanner checks', () => {
+        const workflowPath = join(REPO_ROOT, '.github', 'workflows', 'validate.yml');
+        const content = readFileSync(workflowPath, 'utf-8');
+
+        assert.doesNotMatch(content, /Check for Python References/);
+        assert.doesNotMatch(content, /grep -r "python\\\|python3"/);
+    });
+
     test('should not have deprecated memory path references except in migration notes', () => {
         const forbidden = '.ai' + '/memory';
         const violations = [];

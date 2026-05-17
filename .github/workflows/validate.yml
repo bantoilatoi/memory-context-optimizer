@@ -51,16 +51,3 @@ jobs:
       - name: Install Test - Claude
         run: node bin/install.js --test-install --only claude
 
-      - name: Check for Python References
-        run: |
-          if grep -r "python\|python3" --include="*.js" . 2>/dev/null; then
-            echo "Error: Python references found in JavaScript files"
-            exit 1
-          fi
-
-      - name: Check for deprecated memory path
-        run: |
-          if grep -r "\deprecated memory path" --include="*.md" . 2>/dev/null; then
-            echo "Error: deprecated memory path references found"
-            exit 1
-          fi
