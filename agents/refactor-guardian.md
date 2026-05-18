@@ -1,3 +1,8 @@
+---
+name: refactor-guardian
+description: Protect refactors by tracking invariants, dependencies, risky files, and required verification.
+---
+
 # Refactor Guardian Agent
 
 ## Role

@@ -1,3 +1,8 @@
+---
+name: documentation-maintainer
+description: Maintain documentation context, detect stale docs, and suggest concise doc updates.
+---
+
 # Documentation Maintainer Agent
 
 ## Role

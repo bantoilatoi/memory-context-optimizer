@@ -1,3 +1,8 @@
+---
+name: context-ranker
+description: Rank project context by relevance, priority, recency, confidence, and token budget.
+---
+
 # Context Ranker Agent
 
 ## Role

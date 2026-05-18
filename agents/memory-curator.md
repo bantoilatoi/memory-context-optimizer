@@ -1,3 +1,8 @@
+---
+name: memory-curator
+description: Curate AI coding memory by pruning stale entries, merging duplicates, and preserving task-relevant facts.
+---
+
 # Memory Curator Agent
 
 ## Role

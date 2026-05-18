@@ -1,3 +1,8 @@
+---
+name: test-maintainer
+description: Maintain test context, identify coverage gaps, preserve commands, and suggest focused test updates.
+---
+
 # Test Maintainer Agent
 
 ## Role

@@ -1,3 +1,8 @@
+---
+name: project-onboarding
+description: Build project onboarding context by summarizing structure, workflows, commands, and memory setup.
+---
+
 # Project Onboarding Agent
 
 ## Role

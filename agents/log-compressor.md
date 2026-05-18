@@ -1,3 +1,8 @@
+---
+name: log-compressor
+description: Compress logs and command output while preserving errors, stack traces, timestamps, and key signals.
+---
+
 # Log Compressor Agent
 
 ## Role

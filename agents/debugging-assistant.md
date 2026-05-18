@@ -1,3 +1,8 @@
+---
+name: debugging-assistant
+description: Optimize debugging context by preserving errors, traces, repro steps, recent changes, and likely causes.
+---
+
 # Debugging Assistant Agent
 
 ## Role

@@ -1,3 +1,8 @@
+---
+name: security-redaction-agent
+description: Detect and redact secrets, credentials, tokens, private keys, and sensitive values before context use.
+---
+
 # Security Redaction Agent
 
 ## Role

@@ -1,3 +1,8 @@
+---
+name: ci-cd-diagnoser
+description: Diagnose CI/CD pipeline failures, find failing stages, compress logs, and suggest root-cause fixes.
+---
+
 # CI/CD Diagnoser Agent
 
 ## Role

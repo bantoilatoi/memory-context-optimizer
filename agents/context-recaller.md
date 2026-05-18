@@ -1,3 +1,8 @@
+---
+name: context-recaller
+description: Recall and compact task-relevant context from memory while preserving important facts and constraints.
+---
+
 # Context Recaller Agent
 
 ## Role
