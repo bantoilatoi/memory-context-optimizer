@@ -1,0 +1,30 @@
+# Rank files, logs, and memory by task relevance
+
+"
+"
+
+<!-- Generated from commands/description = "Rank files, logs, and memory by task relevance"
+prompt = """
+Rank context items by relevance to current task.
+
+Categories:
+1. Critical (load first): current file, imports, tests, config
+2. Useful (load if needed): same directory, related tests
+3. Reference (load on request): docs, examples
+4. Archive (skip): unrelated files, old tests
+
+Ranking factors:
+- direct_importance (40%): is this the current focus?
+- task_mention (30%): how often mentioned?
+- recency (20%): recently modified?
+- dependency (10%): import distance?
+
+Load limits:
+- Critical: unlimited
+- Useful: 20 items
+- Reference: 10 items
+- Archive: 0 (skip)
+
+Prioritize failing tests, direct imports, recent changes.
+"""
+ -->
